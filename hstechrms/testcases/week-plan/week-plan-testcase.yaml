@@ -1,0 +1,10 @@
+config: 
+  name: 周计划测试用例'
+  variables: 
+    expected_status_code: 200 #正常的接口状态响应码
+    json_result: true #接口正确状态值
+  base_url: ${ENV(base_path)}
+teststeps:
+    - {name: '周计划列表数据查询',api: 'api/week-plan/week-plan-api-02-99.yaml'}
+    - {name: '月计划根据工作内容条件检索',api: 'api/month-plan/month-plan-api_01_98.yaml'}
+    - {name: '工作负责人列表查询',api: 'api/week-plan/week-plan-api-02-98.yaml'}

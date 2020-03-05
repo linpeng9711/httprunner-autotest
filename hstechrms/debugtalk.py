@@ -6,6 +6,11 @@ import mockLogin
 import timeFormat
 from selenium import webdriver # 从selenium导入webdriver
 
+#初始化
+def init():
+    get_cookie()
+    get_csrf()
+
 #获取token
 def get_csrf():
     global csrf
@@ -45,5 +50,7 @@ def getTime():
 def getNextWeek():
     return timeFormat.getNextWeek()
 
-get_cookie()
-get_csrf()
+# #获得全局唯一的随机字符串(多次调用该方法,返回同一个)
+# def getStaticRandomStr():
+
+init()

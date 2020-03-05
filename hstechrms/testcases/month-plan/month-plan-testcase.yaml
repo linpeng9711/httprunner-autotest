@@ -6,9 +6,9 @@ config:
     workContent: ${appendRandomStr(测试脚本新增)}
   base_url: ${ENV(base_path)}
 teststeps:
-    - {name: '月计划数据查询(test)',api: 'api/month-plan/month-plan-api_01_99.yaml'}
+    - {name: '月计划数据查询',api: 'api/month-plan/month-plan-api_01_99.yaml'}
     - {name: '新增月计划验证(zyxx_01_01)',api: 'api/month-plan/month-plan-api_01_01.yaml'}
-    - {name: '月计划根据工作内容条件检索(test)',api: 'api/month-plan/month-plan-api_01_98.yaml'}
+    - {name: '月计划根据工作内容条件检索',api: 'api/month-plan/month-plan-api_01_98.yaml'}
     - {name: '班组提交审核验证(zyxx_01_02)',api: 'api/month-plan/month-plan-api_01_02.yaml'}
     - {name: '部门计划管理员审核验证_拒绝(zyxx_01_03)',api: 'api/month-plan/month-plan-api_01_03.2.yaml'}
     - {name: '班组再次提交验证_修改计划(zyxx_01_04)',api: 'api/month-plan/month-plan-api_01_04.1.yaml'}
