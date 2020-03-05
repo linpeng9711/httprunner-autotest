@@ -8,7 +8,7 @@ request:
     Cookie: SESSION=${get_cookie_session()}
     X-CSRF-TOKEN: ${get_token()}
   data:
-    confirmRemark: no
+    confirmRemark: 拒绝
     confirmStatus: 4
     ids: $monthPlanId
   method: POST

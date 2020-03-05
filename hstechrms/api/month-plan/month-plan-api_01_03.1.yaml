@@ -8,9 +8,9 @@ request:
     Cookie: SESSION=${get_cookie_session()}
     X-CSRF-TOKEN: ${get_token()}
   data:
-    confirmRemark: yes
+    confirmRemark: 通过
     confirmStatus: 10
-    ids: ff808081708045cb01708435c5ba0080
+    ids: $monthPlanId
   method: POST
 validate:
     - eq: ["status_code", $expected_status_code]
