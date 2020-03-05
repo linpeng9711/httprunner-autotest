@@ -1,0 +1,17 @@
+name: 部门计划管理员审核验证_审批通过(zyxx_01_03.1)
+request: 
+  url: "/hstechrms/ylja/plan/saveMonthPlanAudit.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    X-CSRF-TOKEN: ${get_token()}
+  data:
+    confirmRemark: yes
+    confirmStatus: 10
+    ids: ff808081708045cb01708435c5ba0080
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]
+    - eq: ["content.success", $json_result]

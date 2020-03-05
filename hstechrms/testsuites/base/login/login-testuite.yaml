@@ -1,0 +1,4 @@
+config: 
+  name: '自动登录测试用例集'
+testcases:
+    - {name: '登录',testcase: '/testcases/base/login-testcase.yaml'}

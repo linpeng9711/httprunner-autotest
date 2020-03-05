@@ -1,0 +1,28 @@
+name: 新增月计划验证(zyxx_01_01)
+request: 
+  url: "/hstechrms/ylja/plan/save.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    X-CSRF-TOKEN: ${get_token()}
+  data:
+    beginTime: ${getTime()}
+    company: 8a0f688f46db11f00146db130fa002ce
+    department: 8a0e9279526397fe0152673a63cc0020
+    endTime: ${getNextWeek()}
+    group.id: 8a0e9279526397fe0152673b508a0021
+    id: ''
+    infrasRisk: 1
+    marketRisk: 1
+    powerGridRisk: 1
+    remarks: ${appendRandomStr(测试脚本新增)}
+    specialty: 2
+    workContent: $workContent
+    workPlace: ${appendRandomStr(测试脚本新增)}
+    workRisk: 3
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]
+    - eq: ["content.success", $json_result]

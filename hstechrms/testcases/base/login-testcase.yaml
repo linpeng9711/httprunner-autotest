@@ -1,0 +1,8 @@
+# config: 
+#   name: '登录'
+#   variables: 
+#     username: ${ENV(login_username)}
+#     password: ${ENV(login_password)}
+#   base_url: ${ENV(base_path)}
+# teststeps:
+#     - {name: '登录',api: 'api/base/login.yaml'}

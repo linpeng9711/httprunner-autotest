@@ -1,0 +1,15 @@
+name: 班组提交审核验证(zyxx_01_02)
+request: 
+  url: "/hstechrms/ylja/plan/entryManCommAudit.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    Content-Type: application/json
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    X-CSRF-TOKEN: ${get_token()}
+  json: 
+      - $monthPlanId
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]
+    - eq: ["content.success", $json_result]

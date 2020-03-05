@@ -1,0 +1,14 @@
+# name: 登录
+# request: 
+#   url: "/hstechrms/login"
+#   headers:
+#     Content-Type: application/x-www-form-urlencoded
+#     Cookie: SESSION=MGI2M2JkYTAtYTcwZC00MzczLThkNGUtNTQ0NThhNmNmMTcx
+#     _csrf_header: X-CSRF-TOKEN
+#   params: 
+#     username: $username
+#     password: $password
+#     _csrf: 'da0fb599-9e46-47d4-9b0b-1a09b4e75557'
+#   method: POST
+# validate:
+#     - eq: ["status_code", 302]

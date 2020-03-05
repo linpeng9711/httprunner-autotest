@@ -1,0 +1,36 @@
+name: 月计划根据工作内容条件检索(test)
+request: 
+  url: "/hstechrms/ylja/plan/list.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    X-CSRF-TOKEN: ${get_token()}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+  params: 
+    workContent: $workContent
+    pickMonth: 2020-03
+    year: 2020
+    month: 2
+    day: 31
+    pageIndex: 0
+    pageSize: 20
+    sortField: 
+    sortOrder: 
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]
+extract: 
+    - monthPlanId: content.data.0.id
+    - beginTime: content.data.0.beginTime
+    - company: content.data.0.companyId
+    - department: content.data.0.departmentId
+    - endTime: content.data.0.endTime
+    - groupId: content.data.0.groupId
+    - infrasRisk: content.data.0.infrasRisk
+    - marketRisk: content.data.0.marketRisk
+    - powerGridRisk: content.data.0.powerGridRisk
+    - remarks: content.data.0.remarks
+    - specialty: content.data.0.specialty
+    - workContent: content.data.0.workContent
+    - workPlace: content.data.0.workPlace
+    - workRisk: content.data.0.workRisk
