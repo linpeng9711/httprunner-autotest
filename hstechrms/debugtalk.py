@@ -10,6 +10,7 @@ from selenium import webdriver # 从selenium导入webdriver
 def init():
     get_cookie()
     get_csrf()
+    generatorStaticRandomValue()
 
 #获取token
 def get_csrf():
@@ -46,11 +47,17 @@ def appendRandomStr(originalStr):
 def getTime():
     return timeFormat.getTime()
 
-#获取指定日期时间
+#获取一周后的时间
 def getNextWeek():
     return timeFormat.getNextWeek()
 
-# #获得全局唯一的随机字符串(多次调用该方法,返回同一个)
-# def getStaticRandomStr():
+#生成全局唯一的随机字符串(多次调用该方法,返回同一个)
+def generatorStaticRandomValue():
+    global srv
+    srv = appendRandomStr("测试数据唯一值")
+    
+#获得全局唯一的随机字符串
+def getSrv():
+    return srv
 
 init()

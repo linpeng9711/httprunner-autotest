@@ -3,7 +3,7 @@ config:
   variables: 
     expected_status_code: 200 #正常的接口状态响应码
     json_result: true #接口正确状态值
-    workContent: ${appendRandomStr(测试脚本新增)}
+    workContent: ${getSrv()}
   base_url: ${ENV(base_path)}
 teststeps:
     - {name: '月计划数据查询',api: 'api/month-plan/month-plan-api_01_99.yaml'}

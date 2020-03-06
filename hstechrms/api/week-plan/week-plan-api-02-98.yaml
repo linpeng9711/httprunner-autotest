@@ -18,3 +18,9 @@ request:
   method: POST
 validate:
     - eq: ["status_code", $expected_status_code]
+extract: 
+  
+    - userId: content.data.1.id
+    - officialUserId: content.data.1.id
+    - realName: content.data.1.realName
+    - phone: content.data.1.phone

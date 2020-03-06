@@ -1,0 +1,16 @@
+name: 班组提交周计划验证_班组提交(zyxx_02_01)
+request: 
+  url: "/hstechrms/ylja/weekPlan/confirm.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    X-CSRF-TOKEN: ${get_token()}
+    Content-Type: application/json
+  json: 
+    ids:
+      - $monthPlanId
+    confirmStatus: 11
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]

@@ -1,0 +1,35 @@
+name: 班组提交周计划验证_选择工作负责人(zyxx_02_01)
+request: 
+  url: "/hstechrms/ylja/weekPlan/edit.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    X-CSRF-TOKEN: ${get_token()}
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+  params: 
+    id: $monthPlanId
+    company.id: $company
+    department.id: $department
+    group.id: $groupId
+    officialUserRealName: $realName
+    officialUser.id: $officialUserId
+    telPhone: $phone
+    specialty: $specialty
+    beginTime: $beginTime
+    endTime: $endTime
+    workPlace: $workPlace
+    workContent: $workContent
+    workRisk: $workRisk
+    infrasRisk: $infrasRisk
+    manInPositionName: 
+    manInPosition: 
+    powerGridRisk: $powerGridRisk
+    marketRisk: $marketRisk
+    riskMonitorMethod: 
+    pzlx: 
+    remarks: $remarks
+    leadingOfficial: $officialUserId 
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]
