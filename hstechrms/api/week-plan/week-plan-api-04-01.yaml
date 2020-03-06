@@ -12,3 +12,4 @@ request:
   data: ''
 validate:
     - eq: ["status_code", $expected_status_code]
+    - eq: ["content.success", $json_result]
