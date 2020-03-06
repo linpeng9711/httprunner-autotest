@@ -11,3 +11,8 @@ teststeps:
     - {name: '工作负责人列表查询',api: 'api/week-plan/week-plan-api-02-98.yaml'}
     - {name: '班组提交周计划验证_选择工作负责人(zyxx_02_01)',api: 'api/week-plan/week-plan-api-02-01.1.yaml'}
     - {name: '班组提交周计划验证_班组提交(zyxx_02_01)',api: 'api/week-plan/week-plan-api-02-01.2.yaml'}
+    - {name: '部门计划管理员审核验证_退回(zyxx_02_02)',api: 'api/week-plan/week-plan-api-02-02.1.yaml'}
+    - {name: '班组再次提交验证_修改周计划信息(zyxx_02_03)',api: 'api/week-plan/week-plan-api-02-01.1.yaml'}
+    - {name: '班组再次提交验证_班组提交(zyxx_02_03)',api: 'api/week-plan/week-plan-api-02-01.2.yaml'}
+    - {name: '部门计划管理员审核验证_确认(zyxx_02_02)',api: 'api/week-plan/week-plan-api-02-02.2.yaml'}
+    - {name: '部门安全员审核验证_确认(zyxx_02_04)',api: 'api/week-plan/week-plan-api-02-04.yaml'}

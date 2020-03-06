@@ -1,4 +1,4 @@
-name: 班组提交周计划验证_选择工作负责人(zyxx_02_01)
+name: 班组提交周计划验证_选择工作负责人/到岗到位人员(zyxx_02_01)
 request: 
   url: "/hstechrms/ylja/weekPlan/edit.pro"
   headers:
@@ -22,8 +22,8 @@ request:
     workContent: $workContent
     workRisk: $workRisk
     infrasRisk: $infrasRisk
-    manInPositionName: 
-    manInPosition: 
+    manInPositionName: $realName
+    manInPosition: $officialUserId
     powerGridRisk: $powerGridRisk
     marketRisk: $marketRisk
     riskMonitorMethod: 
