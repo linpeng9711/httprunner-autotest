@@ -12,6 +12,11 @@ def init():
     get_csrf()
     generatorStaticRandomValue()
 
+#产生两秒的运行间隔
+def pause_here():
+    print('在这停顿')
+    time.sleep(2)
+
 #获取token
 def get_csrf():
     global csrf
