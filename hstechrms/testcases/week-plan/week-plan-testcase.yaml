@@ -16,3 +16,5 @@ teststeps:
     - {name: '班组再次提交验证_班组提交(zyxx_02_03)',api: 'api/week-plan/week-plan-api-02-01.2.yaml'}
     - {name: '部门计划管理员审核验证_确认(zyxx_02_02)',api: 'api/week-plan/week-plan-api-02-02.2.yaml'}
     - {name: '部门安全员审核验证_确认(zyxx_02_04)',api: 'api/week-plan/week-plan-api-02-04.yaml'}
+    - {name: '班组作废周计划申请验证(zyxx_03_01)',api: 'api/week-plan/week-plan-api-03-01.yaml'}
+    - {name: '取消作废周计划验证(zyxx_04_01)',api: 'api/week-plan/week-plan-api-04-01.yaml'}

@@ -1,0 +1,17 @@
+name: 班组作废周计划申请验证(zyxx_03_01)
+request: 
+  url: "/hstechrms/ylja/weekPlan/planEnd.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    X-CSRF-TOKEN: ${get_token()}
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+  data: 
+    auditStatus: 4
+    confirmStatus: 20
+    objIdList: $monthPlanId
+    auditRemark: 一段作废意见文本
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]
