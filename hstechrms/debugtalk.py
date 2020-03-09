@@ -13,8 +13,7 @@ def init():
     generatorStaticRandomValue()
 
 #产生两秒的运行间隔
-def pause_here():
-    print('在这停顿')
+def time_sleep():
     time.sleep(2)
 
 #获取token

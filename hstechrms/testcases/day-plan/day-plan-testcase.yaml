@@ -1,0 +1,9 @@
+config: 
+  name: 日计划测试用例'
+  variables: 
+    expected_status_code: 200 #正常的接口状态响应码
+    json_result: true #接口正确状态值
+    workContent: ${getSrv()}
+  base_url: ${ENV(base_path)}
+teststeps:
+    - {name: '日计划测试用例',api: 'api/month-plan/month-plan-api_01_99.yaml'}
