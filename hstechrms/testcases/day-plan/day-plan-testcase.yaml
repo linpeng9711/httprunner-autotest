@@ -6,7 +6,13 @@ config:
     workContent: ${getSrv()}
   base_url: ${ENV(base_path)}
 teststeps:
-    - {name: '日计划列表数据查询',api: 'api/day-plan/day-plan-api_05_99.yaml'}
-    - {name: '条件检索月计划基础信息',api: 'api/month-plan/month-plan-api_01_98.yaml'}
-    - {name: '条件检索周计划基础信息',api: 'api/week-plan/week-plan-api_02_97.yaml'}
-    - {name: '日计划填写票种类型(zyxx_05_01)',api: 'api/day-plan/day-plan-api_05_01.yaml'}
+    - {name: '日计划列表数据查询',api: 'api/day-plan/day-plan-api_99_99.yaml'}
+    - {name: '条件检索月计划基础信息',api: 'api/month-plan/month-plan-api_99_98.yaml'}
+    - {name: '条件检索周计划基础信息',api: 'api/week-plan/week-plan-api_99_97.yaml'}
+    - {name: '日计划填写票种类型(zyxx_05_01)',api: 'api/day-plan/day-plan-api_05_01.1.yaml'}
+    - {name: '班组提交日计划验证(zyxx_05_01)',api: 'api/day-plan/day-plan-api_05_01.2.yaml'}
+    - {name: '部门计划管理员审核验证-拒绝(zyxx_05_02)',api: 'api/day-plan/day-plan-api_05_02.1.yaml'}
+    - {name: '修改日计划信息(zyxx_05_03)',api: 'api/day-plan/day-plan-api_05_01.1.yaml'}
+    - {name: '班组重新提交(zyxx_05_03)',api: 'api/day-plan/day-plan-api_05_01.2.yaml'}
+    - {name: '部门计划管理员审核验证-通过(zyxx_05_02)',api: 'api/day-plan/day-plan-api_05_02.2.yaml'}
+    - {name: '班组作废日计划申请验证(zyxx_06_01)',api: 'api/day-plan/day-plan-api_06_01.yaml'}
