@@ -1,0 +1,20 @@
+name: 部门计划管理员恢复日计划验证(zyxx_09_01)
+request: 
+  url: "/hstechrms/ylja/planPause/planRestart.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    X-CSRF-TOKEN: ${get_token()}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    Content-Type: application/json
+    TIME_WAIT: ${time_sleep()}
+  json:
+    endTime: '2020-03-09T16:00:00.000Z' #需动态化
+    operReason: 恢复
+    pauseIdList:
+      - $pauseId
+    planIdList:
+      - $monthPlanId
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]

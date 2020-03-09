@@ -15,4 +15,8 @@ teststeps:
     - {name: '修改日计划信息(zyxx_05_03)',api: 'api/day-plan/day-plan-api_05_01.1.yaml'}
     - {name: '班组重新提交(zyxx_05_03)',api: 'api/day-plan/day-plan-api_05_01.2.yaml'}
     - {name: '部门计划管理员审核验证-通过(zyxx_05_02)',api: 'api/day-plan/day-plan-api_05_02.2.yaml'}
-    - {name: '班组作废日计划申请验证(zyxx_06_01)',api: 'api/day-plan/day-plan-api_06_01.yaml'}
+    - {name: '班组作废日计划申请验证(zyxx_06_01)',api: 'api/day-plan/day-plan-api_06_01.1.yaml'}
+    - {name: '日计划取消作废',api: 'api/day-plan/day-plan-api_06_01.2.yaml'}
+    - {name: '部门计划管理员暂停日计划验证(zyxx_08_01)',api: 'api/day-plan/day-plan-api_08_01.yaml'}
+    - {name: '暂停记录查询',api: 'api/day-plan/day-plan-api_99_98.yaml'}
+    - {name: '部门计划管理员恢复日计划验证(zyxx_09_01)',api: 'api/day-plan/day-plan-api_09_01.yaml'}
