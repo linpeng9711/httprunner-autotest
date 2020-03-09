@@ -6,6 +6,11 @@ def getTime():
     formatStr = '%Y-%m-%d %H:%M:%S'
     return time.strftime(formatStr,time.localtime(time.time()))
 
+#获取当天日期
+def getDay():
+    formatStr = '%Y-%m-%d'
+    return time.strftime(formatStr,time.localtime(time.time()))
+
 #获取指定时间
 def getNextWeek():
     #获取当前时间

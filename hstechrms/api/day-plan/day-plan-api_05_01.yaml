@@ -1,0 +1,46 @@
+name: 日计划填写票种类型(zyxx_05_01)
+request: 
+  url: "/hstechrms/ylja/dayPlan/save.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    X-CSRF-TOKEN: ${get_token()}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+  data: 
+    ticketId: 
+    id: $monthPlanId
+    planType: ''
+    company: $company
+    department: $department
+    group.id: $groupId
+    beginTime: $beginTime
+    endTime: $endTime
+    officialUserRealName: $officialUserRealName
+    officialUser.id: $officialUserId
+    telPhone: $telPhone
+    specialty: $specialty
+    workRisk: $workRisk
+    ticketType: 1
+    pzlx: 9904
+    workManName: 
+    workMan: 
+    manInPositionName: $manInPositionName
+    manInPosition: $manInPosition
+    ticketNo: 
+    ticketNoName: 
+    riskMonitorMethod: 2
+    infrasRisk: $infrasRisk
+    powerGridRisk: $powerGridRisk
+    marketRisk: $marketRisk
+    copieds: 
+    workPlace: $workPlace
+    workContent: $workContent
+    remarks: $remarks
+    leadingOfficial: $officialUserId
+  params:
+    ph: ''
+    tempUUid: ''
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]

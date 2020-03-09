@@ -1,4 +1,0 @@
-config: 
-  name: '日计划测试用例集'
-testcases:
-    - {name: '作业计划管理-日计划',testcase: '/testcases/day-plan/day-plan-testcase.yaml'}

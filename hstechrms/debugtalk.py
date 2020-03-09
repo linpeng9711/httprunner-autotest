@@ -64,4 +64,8 @@ def generatorStaticRandomValue():
 def getSrv():
     return srv
 
+#获得当前日期
+def getDay():
+    return timeFormat.getDay()
+
 init()

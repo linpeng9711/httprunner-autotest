@@ -6,15 +6,15 @@ config:
     workContent: ${getSrv()}
   base_url: ${ENV(base_path)}
 teststeps:
-    - {name: '周计划列表数据查询',api: 'api/week-plan/week-plan-api-02-99.yaml'}
+    - {name: '周计划列表数据查询',api: 'api/week-plan/week-plan-api_02_99.yaml'}
     - {name: '条件检索月计划基础信息',api: 'api/month-plan/month-plan-api_01_98.yaml'}
-    - {name: '工作负责人列表查询',api: 'api/week-plan/week-plan-api-02-98.yaml'}
-    - {name: '班组提交周计划验证_选择工作负责人(zyxx_02_01)',api: 'api/week-plan/week-plan-api-02-01.1.yaml'}
-    - {name: '班组提交周计划验证_班组提交(zyxx_02_01)',api: 'api/week-plan/week-plan-api-02-01.2.yaml'}
-    - {name: '部门计划管理员审核验证_退回(zyxx_02_02)',api: 'api/week-plan/week-plan-api-02-02.1.yaml'}
-    - {name: '班组再次提交验证_修改周计划信息(zyxx_02_03)',api: 'api/week-plan/week-plan-api-02-01.1.yaml'}
-    - {name: '班组再次提交验证_班组提交(zyxx_02_03)',api: 'api/week-plan/week-plan-api-02-01.2.yaml'}
-    - {name: '部门计划管理员审核验证_确认(zyxx_02_02)',api: 'api/week-plan/week-plan-api-02-02.2.yaml'}
-    - {name: '部门安全员审核验证_确认(zyxx_02_04)',api: 'api/week-plan/week-plan-api-02-04.yaml'}
-    - {name: '班组作废周计划申请验证(zyxx_03_01)',api: 'api/week-plan/week-plan-api-03-01.yaml'}
-    - {name: '取消作废周计划验证(zyxx_04_01)',api: 'api/week-plan/week-plan-api-04-01.yaml'}
+    - {name: '工作负责人列表查询',api: 'api/week-plan/week-plan-api_02_98.yaml'}
+    - {name: '班组提交周计划验证_选择工作负责人(zyxx_02_01)',api: 'api/week-plan/week-plan-api_02_01.1.yaml'}
+    - {name: '班组提交周计划验证_班组提交(zyxx_02_01)',api: 'api/week-plan/week-plan-api_02_01.2.yaml'}
+    - {name: '部门计划管理员审核验证_退回(zyxx_02_02)',api: 'api/week-plan/week-plan-api_02_02.1.yaml'}
+    - {name: '班组再次提交验证_修改周计划信息(zyxx_02_03)',api: 'api/week-plan/week-plan-api_02_01.1.yaml'}
+    - {name: '班组再次提交验证_班组提交(zyxx_02_03)',api: 'api/week-plan/week-plan-api_02_01.2.yaml'}
+    - {name: '部门计划管理员审核验证_确认(zyxx_02_02)',api: 'api/week-plan/week-plan-api_02_02.2.yaml'}
+    - {name: '部门安全员审核验证_确认(zyxx_02_04)',api: 'api/week-plan/week-plan-api_02_04.yaml'}
+    - {name: '班组作废周计划申请验证(zyxx_03_01)',api: 'api/week-plan/week-plan-api_03_01.yaml'}
+    - {name: '取消作废周计划验证(zyxx_04_01)',api: 'api/week-plan/week-plan-api_04_01.yaml'}

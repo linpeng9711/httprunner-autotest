@@ -6,4 +6,7 @@ config:
     workContent: ${getSrv()}
   base_url: ${ENV(base_path)}
 teststeps:
-    - {name: '日计划测试用例',api: 'api/month-plan/month-plan-api_01_99.yaml'}
+    - {name: '日计划列表数据查询',api: 'api/day-plan/day-plan-api_05_99.yaml'}
+    - {name: '条件检索月计划基础信息',api: 'api/month-plan/month-plan-api_01_98.yaml'}
+    - {name: '条件检索周计划基础信息',api: 'api/week-plan/week-plan-api_02_97.yaml'}
+    - {name: '日计划填写票种类型(zyxx_05_01)',api: 'api/day-plan/day-plan-api_05_01.yaml'}

@@ -1,4 +1,0 @@
-config: 
-  name: '月计划测试用例集'
-testcases:
-    - {name: '作业计划管理-月计划',testcase: '/testcases/month-plan/month-plan-testcase.yaml'}
