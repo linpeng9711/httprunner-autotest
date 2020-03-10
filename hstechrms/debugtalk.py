@@ -5,9 +5,11 @@ import string
 import mockLogin
 import timeFormat
 from selenium import webdriver # 从selenium导入webdriver
+from selenium.webdriver.chrome.options import Options
 
 #初始化
 def init():
+    #getCookByHeadlessChrome()
     get_cookie()
     get_csrf()
     generatorStaticRandomValue()
@@ -31,6 +33,19 @@ def get_cookie():
     cookie=driver.get_cookies()[0]
     # 获取cookie
     #print(cookie['domain'],cookie['name'],cookie['value'])
+    global cookie_session
+    cookie_session=cookie['value']
+    print('session:'+cookie_session)
+    return cookie['value']
+
+#使用无头浏览器获得模拟登陆获得cookie
+def getCookByHeadlessChrome():
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    driver = webdriver.Chrome(chrome_options=chrome_options)
+    mockLogin.getCookByHeadlessChrome(driver)
+    cookie = driver.get_cookies()[0]
     global cookie_session
     cookie_session=cookie['value']
     print('session:'+cookie_session)
