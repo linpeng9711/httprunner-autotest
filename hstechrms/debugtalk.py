@@ -1,16 +1,24 @@
 import time
 import random
 import string
-
 import mockLogin
 import timeFormat
+import os
 from selenium import webdriver # 从selenium导入webdriver
 from selenium.webdriver.chrome.options import Options
 
 #初始化
 def init():
-    #getCookByHeadlessChrome()
-    get_cookie()
+    mockLoginMethod = os.environ["mock_login_method"] #获取模拟登陆方式
+    if mockLoginMethod == 'headless':
+        print('使用headless模拟登陆')
+        getCookByHeadlessChrome()
+    elif mockLoginMethod == 'webdriver':
+        print('使用webdriver模拟登陆')
+        get_cookie()
+    else:
+        print('mock_login_method参数设置不正确,请进入.env文件修改')
+        return
     get_csrf()
     generatorStaticRandomValue()
 
@@ -40,10 +48,14 @@ def get_cookie():
 
 #使用无头浏览器获得模拟登陆获得cookie
 def getCookByHeadlessChrome():
+    global driver
     chrome_options = Options()
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    #chrome_options.add_argument('blink-settings=imagesEnabled=false')
+    #chrome_options.add_argument('--disable-gpu')
+    driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=chrome_options)
     mockLogin.getCookByHeadlessChrome(driver)
     cookie = driver.get_cookies()[0]
     global cookie_session
