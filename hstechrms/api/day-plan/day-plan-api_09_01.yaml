@@ -9,7 +9,7 @@ request:
     Content-Type: application/json
     TIME_WAIT: ${time_sleep()}
   json:
-    endTime: '2020-03-09T16:00:00.000Z' #需动态化
+    endTime: ${getUTCtime()}
     operReason: 恢复
     pauseIdList:
       - $pauseId

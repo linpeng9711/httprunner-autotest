@@ -54,7 +54,7 @@ def getCookByHeadlessChrome():
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
     #chrome_options.add_argument('blink-settings=imagesEnabled=false')
-    #chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=chrome_options)
     mockLogin.getCookByHeadlessChrome(driver)
     cookie = driver.get_cookies()[0]
@@ -86,7 +86,15 @@ def getNextWeek():
 def generatorStaticRandomValue():
     global srv
     srv = appendRandomStr("测试数据唯一值")
-    
+
+#获取UTC格式当天日期
+def getUTCtime():
+    return timeFormat.getUTCtime()
+
+#获取明日UTC格式时间
+def getUTCTomorrowTime():
+    return timeFormat.getUTCTomorrowTime()
+
 #获得全局唯一的随机字符串
 def getSrv():
     return srv

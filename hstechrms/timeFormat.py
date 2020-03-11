@@ -19,6 +19,16 @@ def getNextWeek():
     offset = datetime.timedelta(days=+7)
     return (today + offset).strftime('%Y-%m-%d %H:%M:%S')
 
+#获取UTC格式的时间
+def getUTCtime():
+    return datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
+#获取明日UTC格式时间
+def getUTCTomorrowTime():
+	today = datetime.datetime.utcnow()
+	tomorrow = today + datetime.timedelta(days=1)
+	return tomorrow.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
 #获取当前周的星期一与星期天的日期
 # def get_current_week():
 #     monday, sunday = datetime.date.today(), datetime.date.today()
@@ -29,6 +39,3 @@ def getNextWeek():
 #         sunday += one_day
 #     # 返回当前的星期一和星期天的日期
 #     return monday, sunday
-
-
-

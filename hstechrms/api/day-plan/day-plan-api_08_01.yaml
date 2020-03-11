@@ -9,8 +9,8 @@ request:
     Content-Type: application/json
     TIME_WAIT: ${time_sleep()}
   json:
-    beginTime: '2020-03-09T16:00:00.000Z' #需动态化
-    endTime: '2020-03-10T16:00:00.000Z' #需动态化
+    beginTime: ${getUTCtime()}
+    endTime: ${getUTCTomorrowTime()}
     operReason: 请求暂停
     planId:
       - $monthPlanId
