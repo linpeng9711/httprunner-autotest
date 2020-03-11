@@ -31,17 +31,17 @@ def getCookie(driver):
     return cookie['value']
 
 #使用无头浏览器模拟点击登录
-def getCookByHeadlessChrome(driver):
-    base_path = os.environ["base_path"] #获取项目根目录
-    driver.get(base_path+'/hstechrms/login')
-    username = driver.find_element_by_id('username$text') #用户名
-    password = driver.find_element_by_id('password$text') #密码
-    submit = driver.find_element_by_id('login') #登录按钮
-    username.send_keys(os.environ["login_username"]) #输入框输入
-    password.send_keys(os.environ["login_password"]) #输入框输入
-    submit.click() #登录
-    cookie=driver.get_cookies()[0]
-    return cookie['value']
+# def getCookByHeadlessChrome(driver):
+#     base_path = os.environ["base_path"] #获取项目根目录
+#     driver.get(base_path+'/hstechrms/login')
+#     username = driver.find_element_by_id('username$text') #用户名
+#     password = driver.find_element_by_id('password$text') #密码
+#     submit = driver.find_element_by_id('login') #登录按钮
+#     username.send_keys(os.environ["login_username"]) #输入框输入
+#     password.send_keys(os.environ["login_password"]) #输入框输入
+#     submit.click() #登录
+#     cookie=driver.get_cookies()[0]
+#     return cookie['value']
 
 #登录后从index页定位meta元素,获取token值
 def getTokenValue(driver):

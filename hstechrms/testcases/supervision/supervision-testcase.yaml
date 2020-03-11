@@ -1,0 +1,12 @@
+- config:
+    name: '安全督查计划'
+    variables: 
+     expected_status_code: 200 #正常的接口状态响应码
+     json_result: true #接口正确状态值
+    base_url: ${ENV(base_path)}
+
+- test:
+    name: '查看安全督查验证(zyxx_10)'
+    api: 'api/supervision/supervison-api_10.yaml'
+    validate:
+      - eq: ["status_code", 200]

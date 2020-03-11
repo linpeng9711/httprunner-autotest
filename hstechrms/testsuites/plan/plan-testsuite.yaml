@@ -1,6 +1,7 @@
 config: 
-  name: '月/周/日计划测试用例集'
+  name: '作业信息模块测试用例集'
 testcases:
     - {name: '作业计划管理-月计划',testcase: '/testcases/month-plan/month-plan-testcase.yaml'}
     - {name: '作业计划管理-周计划',testcase: '/testcases/week-plan/week-plan-testcase.yaml'}
     - {name: '作业计划管理-日计划',testcase: '/testcases/day-plan/day-plan-testcase.yaml'}
+    - {name: '作业计划管理-安全督查计划',testcase: '/testcases/supervision/supervision-testcase.yaml'}
