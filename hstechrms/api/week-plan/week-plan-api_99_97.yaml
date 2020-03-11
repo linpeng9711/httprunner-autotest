@@ -24,3 +24,4 @@ extract:
     telPhone: content.data.0.telPhone
     officialUserRealName: content.data.0.officialUserRealName
     officialUserId: content.data.0.officialUserId
+    riskMonitorMethod : content.data.0.riskMonitorMethod

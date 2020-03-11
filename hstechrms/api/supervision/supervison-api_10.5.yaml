@@ -1,0 +1,14 @@
+name: 确认督查计划验证
+request: 
+  url: "/hstechrms/ylja/supervision/confirm.pro"
+  headers:
+    X-Requested-With: XMLHttpRequest
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+    Cookie: SESSION=${get_cookie_session()}
+    X-CSRF-TOKEN: ${get_token()}
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+  data: 
+    ids: $supervisonId
+  method: POST
+validate:
+    - eq: ["status_code", $expected_status_code]

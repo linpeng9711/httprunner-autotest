@@ -1,12 +1,81 @@
 - config:
-    name: '安全督查计划'
+    name: 安全督查计划
     variables: 
      expected_status_code: 200 #正常的接口状态响应码
      json_result: true #接口正确状态值
     base_url: ${ENV(base_path)}
 
 - test:
-    name: '查看安全督查验证(zyxx_10)'
-    api: 'api/supervision/supervison-api_10.yaml'
+    name: 查看安全督查验证(zyxx_10)
+    api: api/supervision/supervison-api_10.1.yaml
     validate:
       - eq: ["status_code", 200]
+
+- test:
+    name: 查询月计划信息
+    api: api/month-plan/month-plan-api_99_98.yaml
+    variables:
+        workContent: ${getSrv()}
+    extract: 
+        - monthPlanId: content.data.0.id
+        - beginTime: content.data.0.beginTime
+        - company: content.data.0.companyId
+        - department: content.data.0.departmentId
+        - endTime: content.data.0.endTime
+        - groupId: content.data.0.groupId
+        - infrasRisk: content.data.0.infrasRisk
+        - marketRisk: content.data.0.marketRisk
+        - powerGridRisk: content.data.0.powerGridRisk
+        - remarks: content.data.0.remarks
+        - specialty: content.data.0.specialty
+        - workContent: content.data.0.workContent
+        - workPlace: content.data.0.workPlace
+        - workRisk: content.data.0.workRisk
+    validate:
+        - eq: ["status_code", 200]
+
+- test:
+    name: 查询周计划信息
+    api: api/week-plan/week-plan-api_99_97.yaml
+    variables:
+        workContent: ${getSrv()}
+    extract: 
+        - manInPositionName: content.data.0.manInPositionName
+        - manInPosition: content.data.0.manInPosition
+        - telPhone: content.data.0.telPhone
+        - officialUserRealName: content.data.0.officialUserRealName
+        - officialUserId: content.data.0.officialUserId
+        - riskMonitorMethod : content.data.0.riskMonitorMethod
+    validate:
+        - eq: ["status_code", 200]
+
+- test:
+    name: 安全督查计划条件检索
+    api: api/supervision/supervison-api_10.2.yaml
+    extract:
+        - supervisonId: content.data.0.id
+    validate:
+        - eq: ["status_code", 200]
+
+- test:
+    name: 查询督查人员列表
+    api: api/supervision/supervison-api_10.3.yaml
+    extract:
+        - uid: content.data.0.id    #督查人员id
+        - uname: content.data.0.name    #督查人员名称
+    validate:
+        - eq: ["status_code", 200]
+
+- test:
+    name: 指定督查人员
+    api: api/supervision/supervison-api_10.4.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 确认督查计划验证
+    api: api/supervision/supervison-api_10.5.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]

@@ -1,4 +1,4 @@
-name: 查看安全督查验证(zyxx_10)
+name: 安全督查计划条件检索
 request: 
   url: "/hstechrms/ylja/supervision/list"
   headers:
@@ -8,8 +8,9 @@ request:
     X-CSRF-TOKEN: ${get_token()}
     Content-Type: application/x-www-form-urlencoded; charset=UTF-8
   data: 
+    workContent: $workContent
     pickDay: ${getDay()}
-    dateString: Wed Mar 11 2020 11:01:48 GMT+0800 (中国标准时间)
+    dateString: Wed Mar 11 2020 15:34:58 GMT+0800 (中国标准时间) #需动态化
     pageIndex: 0
     pageSize: 20
     sortField: 
