@@ -56,7 +56,7 @@ def getCookByHeadlessChrome():
     #chrome_options.add_argument('blink-settings=imagesEnabled=false')
     chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=chrome_options)
-    mockLogin.getCookByHeadlessChrome(driver)
+    mockLogin.getCookie(driver)
     cookie = driver.get_cookies()[0]
     global cookie_session
     cookie_session=cookie['value']
