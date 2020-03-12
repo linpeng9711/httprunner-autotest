@@ -10,7 +10,7 @@ request:
   data: 
     workContent: $workContent
     pickDay: ${getDay()}
-    dateString: Wed Mar 11 2020 15:34:58 GMT+0800 (中国标准时间) #需动态化
+    dateString: Wed Mar 12 2020 15:34:58 GMT+0800 (中国标准时间) #需动态化
     pageIndex: 0
     pageSize: 20
     sortField: 

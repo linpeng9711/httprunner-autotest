@@ -1,22 +1,126 @@
-config: 
-  name: 日计划测试用例'
-  variables: 
-    expected_status_code: 200 #正常的接口状态响应码
-    json_result: true #接口正确状态值
-    workContent: ${getSrv()}
-  base_url: ${ENV(base_path)}
-teststeps:
-    - {name: '日计划列表数据查询',api: 'api/day-plan/day-plan-api_99_99.yaml'}
-    - {name: '条件检索月计划基础信息',api: 'api/month-plan/month-plan-api_99_98.yaml'}
-    - {name: '条件检索周计划基础信息',api: 'api/week-plan/week-plan-api_99_97.yaml'}
-    - {name: '日计划填写票种类型(zyxx_05_01)',api: 'api/day-plan/day-plan-api_05_01.1.yaml'}
-    - {name: '班组提交日计划验证(zyxx_05_01)',api: 'api/day-plan/day-plan-api_05_01.2.yaml'}
-    - {name: '部门计划管理员审核验证-拒绝(zyxx_05_02)',api: 'api/day-plan/day-plan-api_05_02.1.yaml'}
-    - {name: '修改日计划信息(zyxx_05_03)',api: 'api/day-plan/day-plan-api_05_01.1.yaml'}
-    - {name: '班组重新提交(zyxx_05_03)',api: 'api/day-plan/day-plan-api_05_01.2.yaml'}
-    - {name: '部门计划管理员审核验证-通过(zyxx_05_02)',api: 'api/day-plan/day-plan-api_05_02.2.yaml'}
-    - {name: '班组作废日计划申请验证(zyxx_06_01)',api: 'api/day-plan/day-plan-api_06_01.1.yaml'}
-    - {name: '日计划取消作废',api: 'api/day-plan/day-plan-api_06_01.2.yaml'}
-    - {name: '部门计划管理员暂停日计划验证(zyxx_08_01)',api: 'api/day-plan/day-plan-api_08_01.yaml'}
-    - {name: '暂停记录查询',api: 'api/day-plan/day-plan-api_99_98.yaml'}
-    - {name: '部门计划管理员恢复日计划验证(zyxx_09_01)',api: 'api/day-plan/day-plan-api_09_01.yaml'}
+- config:
+    name: 日计划测试用例
+    variables: 
+     expected_status_code: 200 #正常的接口状态响应码
+     json_result: true #接口正确状态值
+    base_url: ${ENV(base_path)}
+
+- test:
+    name: 日计划列表数据查询
+    api: api/day-plan/day-plan-api_99_99.yaml
+    validate:
+      - eq: ["status_code", 200]
+
+- test:
+    name: 月计划根据工作内容条件检索
+    api: api/month-plan/month-plan-api_99_98.yaml
+    variables:
+        workContent: ${getSrv()}
+    extract: 
+      - monthPlanId: content.data.0.id
+      - beginTime: content.data.0.beginTime
+      - company: content.data.0.companyId
+      - department: content.data.0.departmentId
+      - endTime: content.data.0.endTime
+      - groupId: content.data.0.groupId
+      - infrasRisk: content.data.0.infrasRisk
+      - marketRisk: content.data.0.marketRisk
+      - powerGridRisk: content.data.0.powerGridRisk
+      - remarks: content.data.0.remarks
+      - specialty: content.data.0.specialty
+      - workContent: content.data.0.workContent
+      - workPlace: content.data.0.workPlace
+      - workRisk: content.data.0.workRisk
+    validate:
+      - eq: ["status_code", 200]
+
+- test:
+    name: 条件检索周计划基础信息
+    api: api/week-plan/week-plan-api_99_97.yaml
+    extract: 
+      - manInPositionName: content.data.0.manInPositionName
+      - manInPosition: content.data.0.manInPosition
+      - telPhone: content.data.0.telPhone
+      - officialUserRealName: content.data.0.officialUserRealName
+      - officialUserId: content.data.0.officialUserId
+      - riskMonitorMethod : content.data.0.riskMonitorMethod
+    validate:
+      - eq: ["status_code", 200]
+
+- test:
+    name: 日计划填写票种类型(zyxx_05_01)
+    api: api/day-plan/day-plan-api_05_01.1.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 班组提交日计划验证(zyxx_05_01)
+    api: api/day-plan/day-plan-api_05_01.2.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 部门计划管理员审核验证-拒绝(zyxx_05_02)
+    api: api/day-plan/day-plan-api_05_02.1.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 修改日计划信息(zyxx_05_03)
+    api: api/day-plan/day-plan-api_05_01.1.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 班组重新提交(zyxx_05_03)
+    api: api/day-plan/day-plan-api_05_01.2.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 部门计划管理员审核验证-通过(zyxx_05_02)
+    api: api/day-plan/day-plan-api_05_02.2.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 班组作废日计划申请验证(zyxx_06_01)
+    api: api/day-plan/day-plan-api_06_01.1.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 日计划取消作废
+    api: api/day-plan/day-plan-api_06_01.2.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 部门计划管理员暂停日计划验证(zyxx_08_01)
+    api: api/day-plan/day-plan-api_08_01.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]
+
+- test:
+    name: 暂停记录查询
+    api: api/day-plan/day-plan-api_99_98.yaml
+    extract: 
+      - pauseId: content.data.0.id
+    validate:
+      - eq: ["status_code", 200]
+
+- test:
+    name: 部门计划管理员恢复日计划验证(zyxx_09_01)
+    api: api/day-plan/day-plan-api_09_01.yaml
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.success", true]

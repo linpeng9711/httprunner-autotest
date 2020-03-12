@@ -18,10 +18,3 @@ request:
   method: POST
 validate:
     - eq: ["status_code", $expected_status_code]
-extract: 
-    manInPositionName: content.data.0.manInPositionName
-    manInPosition: content.data.0.manInPosition
-    telPhone: content.data.0.telPhone
-    officialUserRealName: content.data.0.officialUserRealName
-    officialUserId: content.data.0.officialUserId
-    riskMonitorMethod : content.data.0.riskMonitorMethod

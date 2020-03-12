@@ -19,18 +19,3 @@ request:
   method: POST
 validate:
     - eq: ["status_code", $expected_status_code]
-extract: 
-    - monthPlanId: content.data.0.id
-    - beginTime: content.data.0.beginTime
-    - company: content.data.0.companyId
-    - department: content.data.0.departmentId
-    - endTime: content.data.0.endTime
-    - groupId: content.data.0.groupId
-    - infrasRisk: content.data.0.infrasRisk
-    - marketRisk: content.data.0.marketRisk
-    - powerGridRisk: content.data.0.powerGridRisk
-    - remarks: content.data.0.remarks
-    - specialty: content.data.0.specialty
-    - workContent: content.data.0.workContent
-    - workPlace: content.data.0.workPlace
-    - workRisk: content.data.0.workRisk
