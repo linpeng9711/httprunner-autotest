@@ -1,0 +1,22 @@
+- config:
+    name: 到岗到位计划测试用例
+    variables: 
+     expected_status_code: 200 #正常的接口状态响应码
+     json_result: true #接口正确状态值
+    base_url: ${ENV(base_path)}
+
+- test:
+    name: 查看到岗到位验证_我的到岗到位计划(zyxx_11)
+    api: api/position-plan/position-plan-api_11.1.yaml
+    variables:
+        isMyOrAll: 1 #列表查询标识,1查询自己 2查询全部
+    validate:
+      - eq: ["status_code", 200]
+
+- test:
+    name: 查看到岗到位验证_全部到岗到位计划(zyxx_11)
+    api: api/position-plan/position-plan-api_11.1.yaml
+    variables:
+        isMyOrAll: 2  #列表查询标识,1查询自己 2查询全部
+    validate:
+      - eq: ["status_code", 200]

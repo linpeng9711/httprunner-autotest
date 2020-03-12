@@ -5,3 +5,4 @@ testcases:
     - {name: '作业计划管理-周计划',testcase: '/testcases/week-plan/week-plan-testcase.yaml'}
     - {name: '作业计划管理-日计划',testcase: '/testcases/day-plan/day-plan-testcase.yaml'}
     - {name: '作业计划管理-安全督查计划',testcase: '/testcases/supervision/supervision-testcase.yaml'}
+    - {name: '作业计划管理-到岗到位计划',testcase: '/testcases/position-plan/position-plan-testcase.yaml'}
