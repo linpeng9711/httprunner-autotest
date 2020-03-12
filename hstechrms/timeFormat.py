@@ -23,6 +23,14 @@ def getNextWeek():
 def getUTCtime():
     return datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
+#获取当日与七日后日期,格式:2020-03-12 ~ 2020-03-19
+def getTodayAndNextWeek():
+	formatStr = '%Y-%m-%d'
+	today = datetime.datetime.now()
+	offset = datetime.timedelta(days=+7)
+	return time.strftime(formatStr,time.localtime(time.time())) + ' ~ ' + (today + offset).strftime(formatStr)
+
+
 #获取明日UTC格式时间
 def getUTCTomorrowTime():
 	today = datetime.datetime.utcnow()

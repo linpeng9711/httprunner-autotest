@@ -9,7 +9,7 @@ request:
     Content-Type: application/x-www-form-urlencoded; charset=UTF-8
   params: 
     workContent: $workContent
-    time: 2020-03-09 ~ 2020-03-15 #需动态化
+    time: ${getTodayAndNextWeek()} #需动态化
     weekFlag: 0
     pageIndex: 0
     pageSize: 20

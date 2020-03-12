@@ -95,6 +95,10 @@ def getUTCtime():
 def getUTCTomorrowTime():
     return timeFormat.getUTCTomorrowTime()
 
+#获取当日与七日后日期,格式:2020-03-12 ~ 2020-03-19
+def getTodayAndNextWeek():
+    return timeFormat.getTodayAndNextWeek()
+
 #获得全局唯一的随机字符串
 def getSrv():
     return srv
